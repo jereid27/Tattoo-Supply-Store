@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Added meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Added links to fonts used in css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Pacifico&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--Changed title to "About Page"-->
+    <title>About Page</title>
+
+    <!--Add css elements-->
+    <style>
+        /*add styling for header and navigation bar*/
+        body{
+            background-color: #212121;
+        }
+        .header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 0px;
+        }
+
+        .header h1{
+            color: white;
+            font-size: 50px;
+            font-family: 'UnifrakturMaguntia', cursive;
+            margin-left: 25px;
+            margin-bottom: 0%;
+
+        }
+
+        .nav-bar {
+            float:right;
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+        .nav-bar ul{
+            list-style: none;
+        }
+        .nav-bar ul li{
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .nav-bar ul li a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            font-size: 20px;
+            margin-top:30px;
+        }
+
+        .nav-bar ul li a:hover{
+            color: #989898;
+        }
+
+        /*Add the styles for the about information*/
+
+        .about-box{
+            color:white;
+            padding: 0px 25px 25px 25px;
+            width: fit-content;
+            margin-left: 3%;
+            margin-right: 5%;
+            margin-top: 3%;
+        }
+
+        .about-box h2{
+            font-size: 35px;
+            font-family: 'Dosis', sans-serif;
+        }
+
+        .about-box p{
+            font-family: 'Dosis', sans-serif;
+            font-size: 18px;
+        }
+        .about-box h3{
+            font-family: 'Dosis', sans-serif;
+        }
+        .about-box a{
+            background-color: #424242;
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            text-decoration: none;
+            width:fit-content;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .about-box a:hover{
+            background-color: #181818;
+        }
+    </style>
+</head>
+<body>
+
+<!--Added navigation bar and header-->
+<div class="header">
+    <h1>Meridian Tattoo Supply</h1>
+    <nav class="nav-bar">
+        <ul>
+            <li><a th:href="@{/mainscreen}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+        </ul>
+    </nav>
+</div>
+<hr>
+
+<!--Create box with About information-->
+<div class="about-box">
+    <h2>About Us</h2>
+    <p>Meridian Tattoo Supply, nestled in the heart of Meridian, Mississippi, stands as the premier destination<br>
+        for professional tattoo artists seeking top-quality equipment and supplies. With a legacy spanning <br>
+        over two decades, we pride ourselves on offering an extensive array of meticulously curated tattoo products, from cutting-edge <br>
+        machine parts to premium-grade inks and needles. Our commitment to excellence and passion for the art of tattooing drives us to source the finest <br>
+        materials, ensuring that every artist who partners with us can bring their creative visions to life. At Meridian Tattoo Supply, we <br>
+        aren't just a supplier; we're your trusted partner in the pursuit of artistic <br>
+        mastery within the vibrant world of tattooing</p>
+    <hr>
+    <h3>Contact Us!</h3>
+    <p>Phone: 555-555-5555<br>
+        Email: meridiants@gmail.com</p>
+    <!--Added button-->
+    <a th:href="@{/mainscreen}">Go Back To Home Page</a>
+</div>
+</body>
+</html>

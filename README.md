@@ -83,10 +83,67 @@ File: mainscreen.html -- Lines: 190-196
 Change: Created list of items to include in each search box.
 
 
-Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
-
 ## Step D.
+### Prompt:
+
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+
+### Changes Made:
+File: about.html -- Line: 2
+
+Change: added thymeleaf to the html tag.
+
+File: about.html -- Line: 6
+
+Change: added a meta tag in the header element.
+
+File: about.html -- Line: 9-11
+
+Change: Added links to fonts that are used in css.
+
+File: about.html -- Line: 14
+
+Change: Changed title tag to "About Page".
+
+File: about.html -- Lines: 17-100
+
+Change: Added css styling to the html file.
+
+File: about.html -- Lines: 19-63
+
+Change: Added styling for header and navigation bar.
+
+File: about.html -- Lines: 67-99
+
+Change: Added the styles for the about information.
+
+File: about.html -- Lines: 105-113
+
+Change: Created the navigation bar with "Home" and "About".
+
+File: about.html -- Lines: 117-132
+
+Change: Created a box to hold the About information. 
+
+File: about.html -- Line: 131
+
+Change: Created a button that is linked to the Home page. 
+
+File: mainscreen.html -- Lines: 236-245
+
+Change: Created a button that is linked to the about page.
+
+File: AboutController.java -- Lines: 9-12
+
+Change: Created the AboutController class and added the annotation "@GetMapping" and a string that connects to the about.html file.
+
+File: AboutController.java -- Line: 6
+
+Change: Added @Controller annotation.
+
+File: mainscreen.html -- Lines: 138-139
+
+Change: Changed links in the navigation bar to links to the mainscreen html file and about html file.
 
 ## Step E.
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
