@@ -146,9 +146,76 @@ File: mainscreen.html -- Lines: 138-139
 Change: Changed links in the navigation bar to links to the mainscreen html file and about html file.
 
 ## Step E.
+### Prompt
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
 Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
+### Changes:
+File: mainscreen.html -- Line: 189
+
+Change: Changed h2 tag for the Products search box to "Machine Products" so that it aligns with the parts.
+
+File: mainscreen.html -- Lines 190-195
+
+Change: Changed the list of products to better align with the parts listed. 
+
+File: BootStrapData.java -- Line 47
+
+Change: Created a list that holds every element in the outsourcedPartsRepository
+
+File: BootStrapData.java -- Line 48
+
+Change: Created a set to store every part in the list.
+
+File: BootStrapData.java -- Lines 50-53
+
+Change: Wrote a for loop that goes through the OutSourcedParts list and adds the name to the Set existingParts.
+
+File: BootStrapData.java -- Line: 54
+
+Change: Wrote an if statement to check that both repositories were empty before adding parts.
+
+File: BootStrapData.java -- Lines: 55-92
+
+Change: Created 5 new parts for the sample inventory with the company name, name, inventory, price, and ID.
+
+File: BootStrapData.java -- Lines: 95-103
+
+Change: Commented out code that created the same list "OutsourcedPart" because i did not need it twice.
+
+File: BootStrapData.java -- Line 105
+
+Change: Created a new list that holds the parts I created so that I can loop through them next.
+
+File: BootStrapData.java -- Lines: 107
+
+Change: Created a for loop to loop through the outsourcedPartsToAdd list that i just created. 
+
+File: BootStrapData.java -- Lines: 108
+
+Change: Wrote an if statement to check to see if the name in the loop exists in existingParts.
+
+File: BootStrapData.java -- Lines: 109
+
+Change: If the name did exist, a new part called "multipack" will be created. 
+
+File: BootStrapData.java -- Lines: 116-117
+
+Change: Save the multipack part to the repository and print out the name and company name.
+
+File: BootStrapData.java -- Lines: 118-120
+
+Change: Wrote an else statement that will save the individual part to the repository instead and print the name and company name. 
+
+File: BootStrapData.java -- Lines: 126-130
+
+Change: Created new sample inventory for the products.
+
+File: BootStrapData.java -- Lines: 132-136
+
+Change: Saved each new product to the product repository.
+
+
 
 ## Step F.
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:

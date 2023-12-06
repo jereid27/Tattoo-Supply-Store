@@ -13,8 +13,10 @@ import com.example.demo.service.ProductServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  *
@@ -33,45 +35,113 @@ public class BootStrapData implements CommandLineRunner {
     public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository) {
         this.partRepository = partRepository;
         this.productRepository = productRepository;
-        this.outsourcedPartRepository=outsourcedPartRepository;
+        this.outsourcedPartRepository = outsourcedPartRepository;
     }
 
+    /*Created an if statement to check if there was 0 in each repository*/
+    /*Added sample inventory and saved it to the repository*/
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
+
+        List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
+        Set<String> existingParts = new HashSet<>();
+
+        for (OutsourcedPart part : outsourcedParts) {
+            existingParts.add(part.getName());
+
+        }
+        if (outsourcedPartRepository.count() == 0 && productRepository.count() == 0) {
+            OutsourcedPart c = new OutsourcedPart();
+            c.setCompanyName("Lucky Supply");
+            c.setName("Coils");
+            c.setInv(100);
+            c.setPrice(10.0);
+            c.setId(10L);
+
+
+            OutsourcedPart s = new OutsourcedPart();
+            s.setCompanyName("Jerry Sailor Supply");
+            s.setName("Springs");
+            s.setInv(100);
+            s.setPrice(5.0);
+            s.setId(11L);
+
+
+            OutsourcedPart ca = new OutsourcedPart();
+            ca.setCompanyName("PinKing Supply");
+            ca.setName("Capacitors");
+            ca.setInv(100);
+            ca.setPrice(10.0);
+            ca.setId(12L);
+
+
+            OutsourcedPart o = new OutsourcedPart();
+            o.setCompanyName("SoulTat Supply");
+            o.setName("O-Rings");
+            o.setInv(100);
+            o.setPrice(5.0);
+            o.setId(13L);
+
+
+            OutsourcedPart f = new OutsourcedPart();
+            f.setCompanyName("InkSolid");
+            f.setName("Frames");
+            f.setInv(100);
+            f.setPrice(10.0);
+            f.setId(10L);
+
+
+            /*Commented out the code here*/
+
+        /*OutsourcedPart thePart=null;
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
+            if(part.getName().equals("Coils"))thePart=part;
         }
 
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getCompanyName());
+        System.out.println(thePart.getCompanyName());*/
+
+            List<OutsourcedPart> outsourcedPartsToAdd = List.of(c, s, ca, o, f);
+
+            for (OutsourcedPart part : outsourcedPartsToAdd) {
+                if (existingParts.contains(part.getName())) {
+                    OutsourcedPart multipack = new OutsourcedPart();
+                    multipack.setCompanyName(part.getCompanyName());
+                    multipack.setName(part.getName() + " Multi-pack");
+                    multipack.setInv(part.getInv());
+                    multipack.setPrice(part.getPrice());
+                    multipack.setId(part.getId());
+
+                    outsourcedPartRepository.save(multipack);
+                    System.out.println(part.getName() + " " + part.getCompanyName());
+                } else {
+                    outsourcedPartRepository.save(part);
+                    System.out.println(part.getName() + " " + part.getCompanyName());
+                }
+            }
+
+
+            /*Created new sample inventory for the products*/
+            Product pumba = new Product("Pumba Machine", 120.0, 100);
+            Product soldier = new Product("Soldier Machine", 120.0, 100);
+            Product tatWiz = new Product("Wizard Machine", 120.0, 100);
+            Product cleanrock = new Product("Clean Machine", 120.0, 100);
+            Product jasper = new Product("Jasper Machine", 120.0, 100);
+
+            productRepository.save(pumba);
+            productRepository.save(soldier);
+            productRepository.save(tatWiz);
+            productRepository.save(cleanrock);
+            productRepository.save(jasper);
+
+
+            System.out.println("Started in Bootstrap");
+            System.out.println("Number of Products" + productRepository.count());
+            System.out.println(productRepository.findAll());
+            System.out.println("Number of Parts" + partRepository.count());
+            System.out.println(partRepository.findAll());
+
         }
-
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
-
-        System.out.println("Started in Bootstrap");
-        System.out.println("Number of Products"+productRepository.count());
-        System.out.println(productRepository.findAll());
-        System.out.println("Number of Parts"+partRepository.count());
-        System.out.println(partRepository.findAll());
-
     }
 }
