@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--Add links to fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Pacifico&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <!--Created styling for the failure page-->
+    <style>
+        body{
+            background-color: #212121;
+        }
+
+        .failure-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        h1{
+            color: red;
+            font-family: 'Dosis', sans-serif;
+            margin-bottom: 0%;
+        }
+
+        h2{
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            margin-top: 0%;
+        }
+
+        a{
+            background-color: #424242;
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            text-decoration: none;
+            width:fit-content;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        a:hover{
+            background-color: #181818;
+            cursor: pointer;
+        }
+
+
+    </style>
+    <!--Changed title to Failure-->
+    <title>Failure</title>
+</head>
+<body>
+
+<!--Wrap div around the message and button-->
+<div class="failure-box">
+    <!--Created a message that tells the user the transaction was not successful.-->
+    <h1>Error:</h1>
+    <h2>You did not purchase this item because there are none left.</h2>
+    <!-- Created a button to send the user back to the home page-->
+    <a th:href="@{/mainscreen}">Go Back To Home Page</a>
+</div>
+</body>
+</html>

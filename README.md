@@ -218,10 +218,147 @@ Change: Saved each new product to the product repository.
 
 
 ## Step F.
+
+### Prompt:
+
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
+
+### Changes Made:
+
+File: mainscreen.html -- Lines: 53-63
+
+Changes: Changed the width, margin, and padding in the search boxes to allow for more space for future buttons.
+
+File: mainscreen.html -- Lines: 92-93
+
+Changes: Changed the width of the buttons to fit the content within them, and changed the border to none.
+
+File: mainscreen.html -- Lines: 230-233
+
+Changes: Created a form using thymeleaf to create a functional "buy now" button.
+
+File: success.html --  Line: 2
+
+Changes: Added the thymeleaf link to use in the HTML file.
+
+File: success.html -- Lines: 6-8
+
+Changes: Added links to fonts to use in the HTML file.
+
+File: success.html -- Lines: 10-13
+
+Changes: Added styles to set the background color.
+
+File: success.html -- Lines: 15-20
+
+Changes: Added styles to the success box class to change the placement of the content. 
+
+File: success.html -- Lines: 23-26
+
+Changes: Added styles to the h1 tag to set the color and font.
+
+File: success.html -- Lines: 28-29
+
+Changes: Added styles to the link that takes the user back to the home page.
+
+File: success.html Lines: 44
+
+Changes: Changed the title to "Success".
+
+File: success.html -- Lines: 49-54
+
+Changes: Wrap a div around the message and button to style the content together.
+
+File: success.html -- Lines: 51
+
+Change: Created a message that tells the user they successfully purchased the item. 
+
+File: success.html -- Lines: 53
+
+Changes: Created a link that takes the user back to the home page. 
+
+File: failure.html -- Line: 2
+
+Changes: Added thymeleaf link to use it in the html file.
+
+File: failure.html -- Lines: 6-8
+
+Changes: Added in links to fonts that are used in the html file.
+
+File: failure.html -- Lines: 10-13
+
+Changes: Added in the styles for the body tag to change the color of the background.
+
+File: failure.html -- Lines: 15-21
+
+Changes: Added the styles for the content of the page and centered it. 
+
+File: failure.html -- Lines 23-33
+
+Changes: Added styles to the h1 and h2 tags to change its fonts and colors.
+
+File: failure.html -- Lines: 35-47
+
+Changes: Added styles to the link and changed its color, font, and placement. 
+
+File: failure.html -- Lines: 52
+
+Changes: Changed the title to "Failure".
+
+File: failure.html -- Lines: 57-63
+
+Changes: Wrapped the content in a div for easier access when styling. 
+
+File: failure.html -- Lines: 59-60
+
+Change: Created a h1 and h2 tag to display a message for the user.
+
+File: failure.html -- Lines: 62
+
+Change: Added in a link to the Home page. 
+
+File: buyNowController.java -- Lines: 1-11
+
+Changes: Created a new java class and imported in the other classes to be used in this file. 
+
+File: buyNowController.java -- Lines: 13
+
+Change: Added in the Controller annotation.
+
+File: buyNowController.java -- Lines: 16
+
+Change: Added in the Autowire annotation.
+
+File: buyNowController.java -- Lines: 17
+
+Change: Initialized the private ProductRepository variable.
+
+File: buyNowController.java -- Lines: 19
+
+Change: Added in the Post Mapping annotation.
+
+File: buyNowController.java -- Lines: 20-36
+
+Changes: Created a new method that accepts the productID as a parameter and holds the logic that checks if the product is not null, and decrements the inventory if it is not null.
+
+File: buyNowController.java -- Lines: 37
+
+Changes: Added GetMapping annotation.
+
+File: buyNowController.java -- Lines: 38-40
+
+Change: created a method that returns the html file success.
+
+File: buyNowController.java -- Lines: 42
+
+Change: Added in a GetMapping annotation.
+
+File: buyNowController.java -- Lines: 43-45
+
+Change: created a method that returns the html file failure.
 
 ## Step G.
 G.  Modify the parts to track maximum and minimum inventory by doing the following:

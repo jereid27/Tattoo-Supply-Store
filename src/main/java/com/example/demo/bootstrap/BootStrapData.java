@@ -123,11 +123,11 @@ public class BootStrapData implements CommandLineRunner {
 
 
             /*Created new sample inventory for the products*/
-            Product pumba = new Product("Pumba Machine", 120.0, 100);
-            Product soldier = new Product("Soldier Machine", 120.0, 100);
-            Product tatWiz = new Product("Wizard Machine", 120.0, 100);
-            Product cleanrock = new Product("Clean Machine", 120.0, 100);
-            Product jasper = new Product("Jasper Machine", 120.0, 100);
+            Product pumba = new Product("Pumba Machine", 120.0, 10);
+            Product soldier = new Product("Soldier Machine", 120.0, 10);
+            Product tatWiz = new Product("Wizard Machine", 120.0, 10);
+            Product cleanrock = new Product("Clean Machine", 120.0, 10);
+            Product jasper = new Product("Jasper Machine", 120.0, 10);
 
             productRepository.save(pumba);
             productRepository.save(soldier);

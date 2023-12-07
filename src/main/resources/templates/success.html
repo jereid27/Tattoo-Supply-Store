@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--Add links to fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Pacifico&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <!--Created styling for the success page-->
+    <style>
+        body{
+            background-color: #212121;
+        }
+
+        .success-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        h1{
+            color: white;
+            font-family: 'Dosis', sans-serif;
+        }
+
+        a{
+            background-color: #424242;
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            text-decoration: none;
+            width:fit-content;
+            padding: 5px;
+            border-radius: 5px;
+        }
+       a:hover{
+            background-color: #181818;
+        }
+
+
+    </style>
+    <!--Changed title to Success-->
+    <title>Success</title>
+</head>
+<body>
+
+<!--Wrap div around the message and button-->
+<div class="success-box">
+<!--Created a message that tells the user the transaction was successful.-->
+<h1>You successfully purchased this item!</h1>
+<!-- Created a button to send the user back to the home page-->
+<a th:href="@{/mainscreen}">Go Back To Home Page</a>
+</div>
+</body>
+</html>
