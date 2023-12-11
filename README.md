@@ -447,10 +447,38 @@ File: AddInhousePartController.java -- Lines: 42-45
 Changes: added an if statement that returns a message if part.validRangeLimit() is false.
 
 ## Step H.
+
+### Prompt:
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+
+### Changes:
+
+File: Part.java -- Lines: 145-147
+
+Changes: Added validation by creating a method to check if the inventory is less than the minimum inventory. 
+
+File: Part.java -- Lines: 149-151
+
+Changes: Added validation by creating a method to check if the inventory is greater than the maximum inventory. 
+
+File: AddOutsourcedPartController.java -- Lines: 43 - 57
+
+Change: Used if statements and bindingResult to create error messages if the lessThanMin() or the greaterThanMax() methods return true.
+
+File: AddInhousePartController.java -- Lines: 43 - 57
+
+Change: Used if statements and bindingResult to create error messages if the lessThanMin() or the greaterThanMax() methods return true.
+
+File: ValidEnufParts.java
+
+Change: Updated the default message to be more specific to the error occurring. 
+
+File: EnufPartsValidator -- Lines: 37
+
+Change: Added additional validation to the existing logic using an if statement to check if the inventory when reduced by one falls below the minimum inventory. 
 
 ## Step I.
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.

@@ -141,6 +141,14 @@ public abstract class Part implements Serializable {
     public boolean validRangeLimit() {
         return getInv() >= getMinInv() && getInv() <= getMaxInv();
     }
+
+    public boolean lessThanMin()  {
+        return getInv() < getMinInv();
+    }
+
+    public boolean greaterThanMax() {
+        return getInv() > getMaxInv();
+    }
 }
 
 
