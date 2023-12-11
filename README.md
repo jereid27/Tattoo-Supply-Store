@@ -361,12 +361,90 @@ File: buyNowController.java -- Lines: 43-45
 Change: created a method that returns the html file failure.
 
 ## Step G.
+
+### Prompt:
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
 •  Modify the sample inventory to include the maximum and minimum fields.
 •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
+### Changes:
+
+File: Part.java -- Lines: 32-33
+
+Changes: Initialized minInv.
+
+File: Part.java -- Lines: 35-36
+
+Changes: Initialized maxInv.
+
+File: Part.java -- Lines: 46-49
+
+Changes: Created a constructor with minInv and maxInv as parameters.
+
+File: Part.java -- Lines: 112-122
+
+Changes: Created getters and setters for the new variables maxInv and minInv.
+
+File: BootStrapData.java -- Lines: 61-62
+
+Changes: Set minInv and maxInv for the first sample inventory item.
+
+File: BootStrapData.java -- Lines: 71-72
+
+Changes: Set minInv and maxInv for the second sample inventory item.
+
+File: BootStrapData.java -- Lines: 81-82
+
+Changes: Set minInv and maxInv for the third sample inventory item.
+
+File: BootStrapData.java -- Lines: 91-92
+
+Changes: Set minInv and maxInv for the fourth sample inventory item.
+
+File: BootStrapData.java -- Lines: 101-102
+
+Changes: Set minInv and maxInv for the fifth sample inventory item.
+
+File: InhousePartForm.html -- Lines: 26-30
+
+Changes: Created two text fields, one for minInv and the other for maxInv.
+
+File: OutsourcedPartForm.html -- Lines: 25-29
+
+Change: Created two text fields, one for minInv and the other for maxInv.
+
+File: mainscreen.html -- Lines: 59-60
+
+Change: Changed padding on the search boxes to create more room for the newly added columns. 
+
+File: mainscreen.html -- Lines: 174-175
+
+Change: Added Minimum Inventory and Maximum Inventory Table Headers. 
+
+File: mainscreen.html -- Lines: 184-185
+
+Change: Added in two <td> tags for minInv and maxInv.
+
+In user folder: changed database name to spring-boot-rename.
+
+File: application.properties -- Line: 6
+
+Change: updated database name to spring-boot-rename. 
+
+File: Part.java -- Lines: 141-143
+
+Change: Created a method that checks if the inventory is within minInv and maxInv.
+
+File: AddOutsourcedPartController.java -- Lines: 42-46
+
+Change: added an if statement that returns a message if part.validRangeLimit() is false.
+
+File: AddInhousePartController.java -- Lines: 42-45
+
+Changes: added an if statement that returns a message if part.validRangeLimit() is false.
 
 ## Step H.
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:

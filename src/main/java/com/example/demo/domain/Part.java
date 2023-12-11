@@ -26,8 +26,16 @@ public abstract class Part implements Serializable {
     String name;
     @Min(value = 0, message = "Price value must be positive")
     double price;
+
+
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+
+    @Min(value = 0, message = "Inventory cannot be less than zero")
+    int minInv;
+
+    @Min(value = 0, message = "Inventory cannot be less than zero")
+    int maxInv;
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -35,6 +43,11 @@ public abstract class Part implements Serializable {
     Set<Product> products= new HashSet<>();
 
     public Part() {
+    }
+
+    public Part(int minInv, int maxInv) {
+        this.minInv = minInv;
+        this.maxInv = maxInv;
     }
 
     public Part(String name, double price, int inv) {
@@ -93,6 +106,22 @@ public abstract class Part implements Serializable {
     public String toString(){
         return this.name;
     }
+
+    public int getMinInv() {
+        return minInv;
+    }
+
+    public void setMinInv(int minInv) {
+        this.minInv = minInv;
+    }
+
+    public int getMaxInv() {
+        return maxInv;
+    }
+
+    public void setMaxInv(int maxInv) {
+        this.maxInv = maxInv;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,4 +136,13 @@ public abstract class Part implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+    //Create a method called validRangeLimit to check if the inventory is within the range of min and max.
+    public boolean validRangeLimit() {
+        return getInv() >= getMinInv() && getInv() <= getMaxInv();
+    }
 }
+
+
+
+

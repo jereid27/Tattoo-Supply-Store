@@ -58,6 +58,8 @@ public class BootStrapData implements CommandLineRunner {
             c.setInv(100);
             c.setPrice(10.0);
             c.setId(10L);
+            c.setMinInv(1);
+            c.setMaxInv(100);
 
 
             OutsourcedPart s = new OutsourcedPart();
@@ -66,6 +68,8 @@ public class BootStrapData implements CommandLineRunner {
             s.setInv(100);
             s.setPrice(5.0);
             s.setId(11L);
+            s.setMinInv(1);
+            s.setMaxInv(100);
 
 
             OutsourcedPart ca = new OutsourcedPart();
@@ -74,6 +78,8 @@ public class BootStrapData implements CommandLineRunner {
             ca.setInv(100);
             ca.setPrice(10.0);
             ca.setId(12L);
+            ca.setMinInv(1);
+            ca.setMaxInv(100);
 
 
             OutsourcedPart o = new OutsourcedPart();
@@ -82,6 +88,8 @@ public class BootStrapData implements CommandLineRunner {
             o.setInv(100);
             o.setPrice(5.0);
             o.setId(13L);
+            o.setMinInv(1);
+            o.setMaxInv(100);
 
 
             OutsourcedPart f = new OutsourcedPart();
@@ -90,6 +98,8 @@ public class BootStrapData implements CommandLineRunner {
             f.setInv(100);
             f.setPrice(10.0);
             f.setId(10L);
+            f.setMinInv(1);
+            f.setMaxInv(100);
 
 
             /*Commented out the code here*/
