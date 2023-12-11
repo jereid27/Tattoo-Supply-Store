@@ -481,7 +481,19 @@ File: EnufPartsValidator -- Lines: 37
 Change: Added additional validation to the existing logic using an if statement to check if the inventory when reduced by one falls below the minimum inventory. 
 
 ## Step I.
+
+### Prompt:
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
+### Changes: 
+
+File: PartTest.java -- Lines: 105-123
+
+Changes: Created two unit tests for the minimum field called getMinInv() and setMinInv().
+
+File: PartTest.java -- Lines: 125-144
+
+Changes: Created two unit tests for the maximum field called getMaxInv() and setMaxInv().
 
 ## Step J.
 J.  Remove the class files for any unused validators in order to clean your code.
