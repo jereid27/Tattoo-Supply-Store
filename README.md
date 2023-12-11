@@ -496,4 +496,10 @@ File: PartTest.java -- Lines: 125-144
 Changes: Created two unit tests for the maximum field called getMaxInv() and setMaxInv().
 
 ## Step J.
+
+### Prompt
 J.  Remove the class files for any unused validators in order to clean your code.
+
+File: DeletePartValidator.java
+
+Changes: Deleted this class as it had no usages. 
