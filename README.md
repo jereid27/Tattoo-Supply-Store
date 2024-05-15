@@ -1,6 +1,11 @@
 
-# WESTERN GOVERNOR UNIVERSITY 
+# Meridian Tattoo Supply - Spring Boot Application
+## WESTERN GOVERNOR UNIVERSITY
 ## D287 – JAVA FRAMEWORKS
+### About This Project:
+This supply website is designed to be a website for a supply store with both products and individual parts to the
+products. My collaboration to this project enabled the website to be fully functional with CRUD functionality and logic implementation to validate entries and functions.
+My personal collaboration can be seen below in the walk-through describing what changes were made and where in the project they can be found.
 
 ## Step C.
 ### Prompt:
